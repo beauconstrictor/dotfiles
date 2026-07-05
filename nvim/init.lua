@@ -21,8 +21,6 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 
-opt.hidden = true
-
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
@@ -32,15 +30,14 @@ opt.relativenumber = true
 opt.laststatus = 0
 opt.mouse = ""
 
+opt.undofile = true
+
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
 opt.termguicolors = true
 
 -- plugins
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { "morhetz/gruvbox" },
@@ -53,14 +50,13 @@ require("lazy").setup({
   { "zah/nim.vim" },
   { "folke/zen-mode.nvim" },
   { "norcalli/nvim-colorizer.lua" },
-  { "vim-scripts/improved-ansiesc" },
   { "stevearc/oil.nvim" },
 })
 
 require("telescope").setup({
   defaults = {
     layout_strategy = "horizontal",
-    file_ignore_patterns = { "__pycache__", ".git" },
+    file_ignore_patterns = { "__pycache__", "%.git/" },
   },
 })
 
