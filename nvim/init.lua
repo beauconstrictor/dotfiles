@@ -37,6 +37,8 @@ local map = vim.keymap.set
 
 opt.termguicolors = true
 
+opt.modeline = true
+
 -- plugins
 
 require("lazy").setup({
