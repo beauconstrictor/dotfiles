@@ -12,8 +12,10 @@
         "sway/scratchpad"
     ],
     "modules-center": [
+        "sway/window"
     ],
     "modules-right": [
+        "custom/separator",
         "pulseaudio",
         "custom/separator",
         "network",
@@ -33,23 +35,10 @@
         "custom/separator",
         "tray"
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "sway/window": {
+      "format": "{}",
+      "max-length": 70
+    },
     "custom/separator": {
       "format": "|",
       "interval": "once"
