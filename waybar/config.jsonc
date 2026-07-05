@@ -179,11 +179,10 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "VOL: {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "VOL: {volume}% (BLUETOOTH: {format_source})",
+        "format-bluetooth-muted": "VOL: MUTE (BLUETOOTH: {format_source})",
+        "format-muted": "VOL: MUTE",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
