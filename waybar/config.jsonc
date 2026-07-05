@@ -55,7 +55,7 @@
       "interval": "once"
     },
     "disk": {
-      "path": "/",
+      "path": "/home",
       "format": "DISK: {percentage_used}%"
     },
     "keyboard-state": {
