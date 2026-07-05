@@ -15,6 +15,9 @@
 !sway/
 !sway/*
 
+!swaylock/
+!swaylock/*
+
 !waybar/
 !waybar/*
 
