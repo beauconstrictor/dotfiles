@@ -38,6 +38,7 @@ local map = vim.keymap.set
 opt.termguicolors = true
 
 opt.modeline = true
+opt.modelines = 5
 
 -- plugins
 
