@@ -23,6 +23,7 @@
         "cpu",
         "custom/separator",
         "memory",
+        "disk",
         "custom/separator",
         "backlight",
         "custom/separator",
@@ -52,6 +53,10 @@
     "custom/separator": {
       "format": "|",
       "interval": "once"
+    },
+    "disk": {
+      "path": "/",
+      "format": "DISK: {percentage_used}%"
     },
     "keyboard-state": {
         "numlock": true,

@@ -10,25 +10,6 @@ window#waybar {
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-}
-*/
-
-window#waybar.termite {
-}
-
-window#waybar.chromium {
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -46,18 +27,8 @@ button {
     color: #ebdbb2;
 }
 
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 #workspaces button.focused, #workspaces button.active {
     box-shadow: inset 0 -3px #ebdbb2;
-}
-
-#workspaces button.urgent {
-}
-
-#mode {
 }
 
 #clock,
@@ -78,36 +49,12 @@ button {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: #ebdbb2;
 }
 
 #window,
 #workspaces {
     margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    color: #ebdbb2;
-}
-
-#battery {
-    color: #ebdbb2;
-}
-
-@keyframes blink {
-    to {
-        color: #000000;
-    }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -124,69 +71,7 @@ button {
     padding-right: 15px;
 }
 
-#power-profiles-daemon.performance {
-    color: #ebdbb2;
-}
-
-#power-profiles-daemon.balanced {
-    color: #ebdbb2;
-}
-
-#power-profiles-daemon.power-saver {
-    color: #000000;
-}
-
 label:focus {
-}
-
-#cpu {
-    color: #ebdbb2;
-}
-
-#memory {
-    color: #ebdbb2;
-}
-
-#disk {
-}
-
-#backlight {
-    color: #ebdbb2;
-}
-
-#network {
-  color: #ebdbb2;
-}
-
-#network.disconnected {
-}
-
-#pulseaudio {
-    color: #ebdbb2;
-}
-
-#wireplumber.muted {
-}
-
-#custom-media {
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-}
-
-#custom-media.custom-vlc {
-}
-
-#temperature {
-}
-
-#temperature.critical {
-}
-
-#tray {
-    color: #ebdbb2;
 }
 
 #tray > .passive {
@@ -197,70 +82,7 @@ label:focus {
     -gtk-icon-effect: highlight;
 }
 
-#idle_inhibitor {
-}
-
-#idle_inhibitor.activated {
-    color: #2d3436;
-}
-
-#mpd {
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-}
-
-#mpd.stopped {
-}
-
-#mpd.paused {
-}
-
-#language {
-    background: #fb4934;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 #scratchpad {
     background: #1d2021;
-}
-
-#scratchpad.empty {
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-}
-
-#privacy-item.audio-in {
-}
-
-#privacy-item.audio-out {
+    margin-left: 10px;
 }
