@@ -140,12 +140,10 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}",
+        "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} (WIRED)",
-        "tooltip-format": "{ifname} via {gwaddr} ({signalStrength}% signal)",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "tooltip-format": "{essid} ({ifname}) via {gwaddr} ({signalStrength}% signal)",
+        "format-disconnected": "Disconnected"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
