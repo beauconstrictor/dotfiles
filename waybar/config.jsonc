@@ -117,35 +117,18 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{used}G/32G"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "{used}G/32G",
+        "tooltip-format": "{used}G used out of {total}G ({percentage}%)"
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "BRIGHT: {percent}%",
+        "tooltip": "Backlight brightness: {percent}%",
         "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
     },
     "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
         "format": "{capacity}%",
-        "format-full": "{capacity}%",
         "format-charging": "{capacity}% (CHRG)",
-        "format-plugged": "{capacity}% (CHRG)",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": []
+        "format-plugged": "{capacity}% (CHRG)"
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -165,7 +148,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid}",
         "format-ethernet": "{ipaddr}/{cidr} (WIRED)",
-        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format": "{ifname} via {gwaddr} ({signalStrength}% signal)",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
