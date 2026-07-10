@@ -122,7 +122,7 @@
     "battery": {
         "format": "{capacity}%",
         "format-charging": "{capacity}% (CHRG)",
-        "format-plugged": "{capacity}% (CHRG)"
+        "format-plugged": "{capacity}% (PLUG)"
     },
     "battery#bat2": {
         "bat": "BAT2"
