@@ -49,9 +49,14 @@ button {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#language,
 #mpd {
     padding: 0 10px;
     color: #ebdbb2;
+}
+
+#language {
+  min-width: 20px;
 }
 
 #window,

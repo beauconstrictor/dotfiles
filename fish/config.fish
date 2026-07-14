@@ -49,4 +49,8 @@ set PATH ~/.nimble/bin $PATH
 set -gx PASSWORDS ~/documents/passwords.yaml.gpg
 set -gx EDITOR nvim
 
+set -gx FS128_TOOL ~/projects/ozpex/micro/osm/src/fs128-tool.py
+set -gx OSM_IMG ~/projects/ozpex/micro/osm/build/osm.bin
+set -gx OSM_LIB ~/projects/ozpex/micro/osm/src/lib/
+
 set -gx MADLAD_INSTALL ~/.local/share/madlad

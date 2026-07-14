@@ -56,7 +56,7 @@ exec swayidle -w \
 
 ### Input configuration
 input type:keyboard {
-    xkb_layout gb
+    xkb_layout "gb,us"
 }
 #
 # Example configuration:
@@ -75,6 +75,7 @@ input type:touchpad {
 #
 # Basics:
 #
+    bindsym $mod+semicolon input type:keyboard xkb_switch_layout next
     # Start a terminal
     bindsym $mod+Return exec $term
 

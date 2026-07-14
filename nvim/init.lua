@@ -30,8 +30,6 @@ opt.relativenumber = true
 opt.laststatus = 0
 opt.mouse = ""
 
-opt.undofile = true
-
 vim.g.mapleader = " "
 local map = vim.keymap.set
 

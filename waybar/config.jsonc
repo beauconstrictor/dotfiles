@@ -20,6 +20,8 @@
         "custom/separator",
         "network",
         "custom/separator",
+        "sway/language",
+        "custom/separator",
         "power-profiles-daemon",
         "custom/separator",
         "cpu",
@@ -38,6 +40,9 @@
     "sway/window": {
       "format": "{}",
       "max-length": 70
+    },
+    "sway/language": {
+        "format": "{short}"
     },
     "custom/separator": {
       "format": "|",
