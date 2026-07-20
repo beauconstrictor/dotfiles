@@ -6,8 +6,16 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        <Space>t: config-cycle tabs.position top right
   content.headers.user_agent:
     global: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
-      Chrome/138.0.0.0 Safari/537.36
+      Chrome/131.0.0.0 Safari/537.36
+  content.javascript.enabled:
+    global: true
+  scrolling.smooth:
+    global: true
   tabs.position:
-    global: right
+    global: top

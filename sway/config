@@ -56,7 +56,7 @@ exec swayidle -w \
 
 ### Input configuration
 input type:keyboard {
-    xkb_layout "gb,us"
+    xkb_layout "us,gb"
 }
 #
 # Example configuration:
@@ -72,6 +72,9 @@ input type:touchpad {
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
+bindsym $mod+n exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send -t 1000 -r 999 -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}") "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}")%"'
+    bindsym --locked $mod+m exec playerctl play-pause
+bindsym $mod+comma exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; notify-send -t 1000 -r 999 -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}") "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}")%"'
 #
 # Basics:
 #
@@ -80,7 +83,7 @@ input type:touchpad {
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+numbersign exec $browser
+    bindsym $mod+apostrophe exec $browser
     bindsym $mod+BackSpace kill
 
     # Start your launcher
@@ -155,6 +158,8 @@ input type:touchpad {
     # We just use 1-10 as the default.
 #
 # Layout stuff:
+
+for_window [title="ZeoHub"] floating enable
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
