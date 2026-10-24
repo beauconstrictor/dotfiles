@@ -47,8 +47,8 @@ output eDP-1 scale 1.5
 #
 # Example configuration:
 
-exec swayidle -w \
-         before-sleep 'swaylock -f -c 000000 --color #282828'
+# exec swayidle -w \
+#          before-sleep 'swaylock -f -c 000000 --color #282828'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -56,7 +56,7 @@ exec swayidle -w \
 
 ### Input configuration
 input type:keyboard {
-    xkb_layout "us,gb"
+    xkb_layout "us"
 }
 #
 # Example configuration:
@@ -72,13 +72,28 @@ input type:touchpad {
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
+
+# finnish accented letters
+
+bindsym $mod+a exec sh -c 'printf ä | wl-copy; wtype -M ctrl v -m ctrl'
+bindsym $mod+o exec sh -c 'printf ö | wl-copy; wtype -M ctrl v -m ctrl'
+bindsym $mod+Shift+a exec sh -c 'printf Ä | wl-copy; wtype -M ctrl v -m ctrl'
+bindsym $mod+Shift+o exec sh -c 'printf Ö | wl-copy; wtype -M ctrl v -m ctrl'
+
+# volume
 bindsym $mod+n exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send -t 1000 -r 999 -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}") "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}")%"'
     bindsym --locked $mod+m exec playerctl play-pause
 bindsym $mod+comma exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; notify-send -t 1000 -r 999 -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}") "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk "{print int(\$2*100)}")%"'
+
+# brightness
+bindsym $mod+Shift+comma exec brightnessctl set 5%+
+bindsym $mod+Shift+n exec brightnessctl set 5%-
+
+bindsym $mod+Escape exec pkill swaynag
+
 #
 # Basics:
 #
-    bindsym $mod+semicolon input type:keyboard xkb_switch_layout next
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -88,7 +103,6 @@ bindsym $mod+comma exec sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; notify
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+q exec $files
 
     # Take a screenshot
     bindsym $mod+s exec $screenshot
@@ -181,7 +195,7 @@ for_window [title="ZeoHub"] floating enable
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+q focus parent
 #
 # Scratchpad:
 #

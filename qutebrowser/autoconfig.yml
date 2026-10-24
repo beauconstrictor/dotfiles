@@ -15,6 +15,11 @@ settings:
       Chrome/131.0.0.0 Safari/537.36
   content.javascript.enabled:
     global: true
+  content.mouse_lock:
+    https://www.casio.com: false
+    https://www.ebay.co.uk: false
+  content.pdfjs:
+    global: false
   scrolling.smooth:
     global: true
   tabs.position:

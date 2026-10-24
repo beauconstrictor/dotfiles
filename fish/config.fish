@@ -10,9 +10,15 @@ abbr -a p passwords.sh
 abbr -a amend git commit --amend
 abbr -a log git log --oneline --graph
 abbr -a o xdg-open
+abbr -a tc trash-clear
 
 function mail
   thunderbird > /dev/null 2>&1 &
+end
+
+function trash-clear
+  rm -rf ~/.local/share/Trash/files/*
+  rm -rf ~/.local/share/Trash/info/*
 end
 
 function commit
@@ -42,6 +48,9 @@ function fish_prompt
     printf (set_color normal)"> "(set_color green)"\$ "(set_color normal)
 end
 
+function fish_mode_prompt
+end
+
 set PATH ~/.local/bin $PATH
 set PATH ~/bin $PATH
 set PATH ~/.nimble/bin $PATH
@@ -54,3 +63,6 @@ set -gx OSM_IMG ~/projects/ozpex/micro/osm/build/osm.bin
 set -gx OSM_LIB ~/projects/ozpex/micro/osm/src/lib/
 
 set -gx MADLAD_INSTALL ~/.local/share/madlad
+
+fish_vi_key_bindings
+fish_vi_cursor

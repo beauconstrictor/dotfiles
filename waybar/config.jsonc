@@ -20,8 +20,6 @@
         "custom/separator",
         "network",
         "custom/separator",
-        "sway/language",
-        "custom/separator",
         "power-profiles-daemon",
         "custom/separator",
         "cpu",
