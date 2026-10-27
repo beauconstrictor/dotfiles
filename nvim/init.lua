@@ -41,17 +41,18 @@ opt.modelines = 5
 -- plugins
 
 require("lazy").setup({
+  { "zah/nim.vim" },
   { "morhetz/gruvbox" },
-  { "nvim-lua/plenary.nvim" },
-  { "nvim-telescope/telescope.nvim" },
   { "wincent/terminus" },
   { "vim-utils/vim-man" },
+  { "stevearc/oil.nvim" },
+  { "folke/zen-mode.nvim" },
   { "maxbane/vim-asm_ca65" },
   { "karb94/neoscroll.nvim" },
-  { "zah/nim.vim" },
-  { "folke/zen-mode.nvim" },
+  { "neovim/nvim-lspconfig" },
+  { "nvim-lua/plenary.nvim" },
   { "norcalli/nvim-colorizer.lua" },
-  { "stevearc/oil.nvim" },
+  { "nvim-telescope/telescope.nvim" },
 })
 
 require("telescope").setup({
@@ -100,6 +101,20 @@ require('oil').setup({
   }
 })
 
+-- lsp
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
+vim.lsp.enable("basedpyright")
+vim.lsp.enable("ruff")
+vim.lsp.enable("clangd")
+
 -- keybinds
 
 map("n", ":", "q:i")
@@ -127,9 +142,14 @@ map("n", "<leader>g", "<cmd>tab terminal make dbg<CR>")
 
 map("i", "<S-Tab>", "<C-d>")
 
-local augroup = vim.api.nvim_create_augroup
+map("n", "<leader>d", vim.diagnostic.open_float)
+map("n", "[d", vim.diagnostic.goto_prev)
+map("n", "]d", vim.diagnostic.goto_next)
+map("n", "<leader>q", vim.diagnostic.setloclist)
 
 -- filetypes
+
+local augroup = vim.api.nvim_create_augroup
 
 -- assembly
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {

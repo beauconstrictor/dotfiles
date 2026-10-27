@@ -23,4 +23,4 @@ settings:
   scrolling.smooth:
     global: true
   tabs.position:
-    global: top
+    global: right
