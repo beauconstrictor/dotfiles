@@ -51,6 +51,7 @@ require("lazy").setup({
   { "karb94/neoscroll.nvim" },
   { "neovim/nvim-lspconfig" },
   { "nvim-lua/plenary.nvim" },
+  { "junegunn/vim-easy-align" },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-telescope/telescope.nvim" },
 })
@@ -146,6 +147,9 @@ map("n", "<leader>d", vim.diagnostic.open_float)
 map("n", "[d", vim.diagnostic.goto_prev)
 map("n", "]d", vim.diagnostic.goto_next)
 map("n", "<leader>q", vim.diagnostic.setloclist)
+
+map("x", "ga", "<Plug>(EasyAlign)")
+map("n", "ga", "<Plug>(EasyAlign)")
 
 -- filetypes
 
