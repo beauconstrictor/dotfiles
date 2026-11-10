@@ -54,6 +54,7 @@ require("lazy").setup({
   { "junegunn/vim-easy-align" },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-telescope/telescope.nvim" },
+  { "HiPhish/rainbow-delimiters.nvim" },
 })
 
 require("telescope").setup({
@@ -210,3 +211,72 @@ vim.cmd("colorscheme gruvbox")
 opt.colorcolumn = "70"
 
 opt.shortmess:append("sI")
+
+-- custom syntax
+
+vim.filetype.add({
+    extension = {
+        cvm = "cvm",
+    },
+})
+
+local ns = vim.api.nvim_create_namespace("cvm_rainbow")
+
+local groups = {
+    "RainbowDelimiterRed",
+    "RainbowDelimiterYellow",
+    "RainbowDelimiterBlue",
+    "RainbowDelimiterOrange",
+    "RainbowDelimiterGreen",
+    "RainbowDelimiterViolet",
+}
+
+vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { link = "GruvboxRed" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", { link = "GruvboxYellow" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", { link = "GruvboxBlue" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { link = "GruvboxOrange" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { link = "GruvboxGreen" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { link = "GruvboxPurple" })
+
+local function highlight(buf)
+    vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
+
+    local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+    local depth = 0
+
+    for row, line in ipairs(lines) do
+        for col = 1, #line do
+            local char = line:sub(col, col)
+
+            if char == "(" or char == "{" then
+                local group = groups[(depth % #groups) + 1]
+
+                vim.api.nvim_buf_add_highlight(
+                    buf, ns, group, row - 1, col - 1, col
+                )
+
+                depth = depth + 1
+
+            elseif char == ")" or char == "}" then
+                depth = math.max(0, depth - 1)
+
+                local group = groups[(depth % #groups) + 1]
+
+                vim.api.nvim_buf_add_highlight(
+                    buf, ns, group, row - 1, col - 1, col
+                )
+            end
+        end
+    end
+end
+
+vim.api.nvim_create_autocmd({
+    "BufEnter",
+    "TextChanged",
+    "TextChangedI",
+}, {
+    pattern = "*.cvm",
+    callback = function(args)
+        highlight(args.buf)
+    end,
+})

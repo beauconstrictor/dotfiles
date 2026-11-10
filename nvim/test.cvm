@@ -1,0 +1,5 @@
+const table = 5
+var variable[2]
+
+{:times-table (mul table)}
+{:main (num (times-table 2))} 

@@ -7,6 +7,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "77b7432d4770d23b277d37923e5a08a442d8bb07" },
   "oil.nvim": { "branch": "master", "commit": "b73018b75affd13fa38e2fc94ef753b465f770d7" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "65734f76783705255d9ede8a6e4692e1572801a5" },
   "telescope.nvim": { "branch": "master", "commit": "427b576c16792edad01a92b89721d923c19ad60f" },
   "terminus": { "branch": "main", "commit": "47247474350e3c2cae12220ef06bed975b7be2dc" },
   "vim-asm_ca65": { "branch": "master", "commit": "57e1203db2411c2541b55a13c3498d282c0236f3" },
