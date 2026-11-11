@@ -9,7 +9,9 @@ c.tabs.width = "25%"
 
 c.content.javascript.clipboard = "access-paste"
 
-config.bind(' t', 'config-cycle tabs.position top right')
+config.bind(" t", "config-cycle tabs.position top right")
+
+c.url.searchengines = {"DEFAULT": "https://noai.duckduckgo.com/?q={}"}
 
 # Gruvbox Dark Theme for qutebrowser
 # Save this as ~/.config/qutebrowser/config.py or add it to your existing config
