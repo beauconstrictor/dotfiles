@@ -38,6 +38,8 @@ opt.termguicolors = true
 opt.modeline = true
 opt.modelines = 5
 
+opt.shell = "/usr/bin/fish"
+
 -- plugins
 
 require("lazy").setup({
